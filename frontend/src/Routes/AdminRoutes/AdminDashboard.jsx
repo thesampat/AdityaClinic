@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import DetailsCard from '../../Components/adminDashboard/DetailsCard';
-import { BsFillCalendar2PlusFill, BsCurrencyRupee, BsCalendarCheckFill, BsCalendar2EventFill } from 'react-icons/bs';
-import { IoToday, IoCalendarSharp } from 'react-icons/io5';
-// import ProfileDetailsCard from '../../Components/adminDashboard/ProfileDetailsCard';
-import LatestUsers from '../../Components/adminDashboard/LatestUsers';
-import CustomBreadcrumbs from '../../Components/CommonComponents/CustomBreadcrumbs';
-import CustomButton from '../../Components/CommonComponents/CustomButton';
 import NavigationButtons from '../../Components/adminDashboard/NavigationButtons';
 import { getAllFilteredAppointments } from '../../Redux/AdminReducer/action';
 import { useDispatch, useSelector } from 'react-redux';
-import * as types from '../../Redux/AdminReducer/actionTypes';
 import CustomSpinner from '../../Components/CommonComponents/CustomSpinner';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
@@ -59,7 +51,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="m-3 rounded-md bg-slate-100 px-8 min-h-[100vh] h-fit py-8 w-full">
-      {/* navigatation */}
       <div className="font-bold text-2xl text-black">
         {' '}
         {(() => {
@@ -81,8 +72,6 @@ export default function AdminDashboard() {
         <GenerateTable headers={table1Headers} data={offlineAp} title="Offline Appointments" />
         <GenerateTable headers={table1Headers} data={onlineAp} title="Online Appointments" />
         <GenerateTable headers={table1Headers} data={consultantAp} title="Consultant Appointments" />
-        {/* <GenerateTable headers={table1Headers} data={table1Data} />
-        <GenerateTable headers={table1Headers} data={table1Data} className="self-center" /> */}
       </div>
 
       {/* latest user table */}

@@ -101,9 +101,9 @@
   $(document).ready(()=>{
     $('#AboutUS').on('click', ()=>{
       let element = $('.target-about-us')
-      console.log(element)
-      // let offset = element.offset().top;
-      // $('html, body').animate({ scrollTop: offset }, 500);
+      // console.log(element)
+      let offset = element.offset().top;
+      $('html, body').animate({ scrollTop: offset }, 500);
     })
   })
   

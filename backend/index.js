@@ -66,9 +66,6 @@ app.use("/bid", bidRouter);
 app.use("/resetPassword", resetPassword);
 
 
-
-
-
 const PORT = process.env?.PORT
 
 app.listen(PORT, () => {
