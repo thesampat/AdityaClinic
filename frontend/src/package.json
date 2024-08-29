@@ -1,0 +1,12 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build --output-path=/Users/sampa/OneDrive/Desktop/ReactBuild/BuildFile"
+  },
+  "author": "",
+  "license": "ISC"
+}

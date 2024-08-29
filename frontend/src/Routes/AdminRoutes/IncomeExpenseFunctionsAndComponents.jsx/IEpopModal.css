@@ -1,0 +1,93 @@
+/* Common Styles */
+.popup-overlay,
+.add-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup,
+.add-popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    width: 35%;
+    max-width: 500px;
+}
+
+.add-popup-content {
+    width: 45%;
+}
+
+.popup,
+.add-popup-content,
+.fruits-container {
+    text-align: left;
+}
+
+/* Button Styles */
+.popup button.add-button,
+.remove-button,
+.add-button {
+    background: blue;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-button {
+    background: red;
+}
+
+/* List Item Styles */
+.popup li,
+.fruit-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.popup li span,
+.fruit-box {
+    flex-grow: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+
+    .popup,
+    .add-popup-content {
+        width: 80%;
+        max-width: none;
+    }
+}
+
+/* Color Classes */
+.bg-yellow-500 {
+    background: yellow;
+}
+
+.bg-red-500 {
+    background: red;
+}
+
+.bg-green-500 {
+    background: green;
+}
+
+.bg-gray-500 {
+    background: gray;
+}

@@ -1,0 +1,158 @@
+[
+    {
+        "Bone Ailments": [
+            "Cervical Spondylitis",
+            "Lumbar Spondylitis",
+            "Gout",
+            "Sciatica",
+            "Spinal Stenosis",
+            "Degenerative Changes",
+            "Joint pain",
+            "Rheumatism",
+            "Joint / Muscular Pain"
+        ]
+    },
+    {
+        "Female Aliments": [
+            "Irregular Period",
+            "Fibroid",
+            "Infertility [Difficulty in pregnancy]",
+            "PCOD",
+            "Endometriosis",
+            "Menopause",
+            "White discharge"
+        ]
+    },
+    {
+        "Mental ailments": [
+            "Schizophrenia",
+            "Stress",
+            "OCD",
+            "Depression",
+            "Anxiety",
+            "Phobic Disorder",
+            "Behavioural and Mental Disorders",
+            "Mental Stress (children & adults)"
+        ]
+    },
+    {
+        "Beauty Enhancement": [
+            "Hair Loss",
+            "Greying of Hair",
+            "Dandruff",
+            "Freckles",
+            "Dark circles under eyes",
+            "Pimples",
+            "Ear Infection",
+            "Conjunctivitis",
+            "Vision Improvement"
+        ]
+    },
+    {
+        "Skin Ailments": [
+            "Eczema",
+            "Psoriasis",
+            "Dermatitis",
+            "Cracks on Heels",
+            "Lichen Planus",
+            "Dry Skin",
+            "Acne/Pimples",
+            "Black Discoloration on Face",
+            "Dark  Circles",
+            "Alopecia Areata",
+            "Warts",
+            "Corn",
+            "Vitiligo",
+            "Heat Storks",
+            "Sun Burns",
+            "Skin Rashes",
+            "Varicose Veins"
+        ]
+    },
+    {
+        "Kidney Disorder": [
+            "Kidney Stone",
+            "UTI",
+            "Burning in Urine",
+            "Blood in Urine",
+            "Cyst",
+            "Kidney disease"
+        ]
+    },
+    {
+        "Respiratory Ailments": [
+            "Bronchitis",
+            "Tonsils Infection",
+            "Sinus Infection",
+            "Asthma (Children & Adults)",
+            "Nasal Polyp",
+            "Sinusitis",
+            "Allergies[Recurrent cough and cold]",
+            "Pneumonia",
+            "Cough / Cold",
+            "COPD",
+            "DNS",
+            "Sore Throat"
+        ]
+    },
+    {
+        "Lifestyle Disorders": [
+            "Obesity (Overweight)",
+            "Diabetes",
+            "Thyroid Disorder",
+            "Goitre",
+            "Nutritional Deficiency",
+            "Mineral Deficiency",
+            "Vitamin Deficiency",
+            "Fatty liver",
+            "Hepatitis B",
+            "Jaundice"
+        ]
+    },
+    {
+        "Heart Ailments": [
+            "B.P.",
+            "Heart Blockages",
+            "Cholesterol",
+            "High / Low BP"
+        ]
+    },
+    {
+        "Brain Ailments": [
+            "Brain Infarct ",
+            "Brain Haemorrhage",
+            "Haematoma of Brain",
+            "Migraine Headache"
+        ]
+    },
+    {
+        "Children Aliments": [
+            "Late Learning to Walk",
+            "Late Learning to Talk",
+            "Stammering",
+            "Examination Phobia",
+            "Memory Grasping & Recollecting Problem",
+            "Bed Wetting, Concentration Difficulties",
+            "Insect Bite, Injury, Operation, Burns",
+            "Mental Stress in adults",
+            "Children (irritant behaviour / violent behaviour)",
+            "Attention Deficit",
+            "Hyperactivity Disorder",
+            "Children (disobedient, not interested in studies)"
+        ]
+    },
+    {
+        "Digestive Disorder": [
+            "Acidity",
+            "Constipation",
+            "Piles",
+            "Fissures",
+            "Gases",
+            "Stomatitis",
+            "IBS",
+            "Migraine",
+            "Motion Sickness",
+            "Food Poisoning"
+        ]
+    }
+]

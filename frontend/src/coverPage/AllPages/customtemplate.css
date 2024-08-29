@@ -1,0 +1,51 @@
+.templateOut {
+    font-family: "Poppins";
+    min-width: 80vw;
+    margin: 0 auto;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6 { 
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 30px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  h3 {
+    font-size: 25px;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 20px;
+  } 
+   
+  hr {
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  img {
+    max-width: 70%;
+    height: auto;
+    margin: 1rem 0;
+  }

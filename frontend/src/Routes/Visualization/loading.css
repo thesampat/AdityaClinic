@@ -1,0 +1,50 @@
+@keyframes dotAnimation {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .loading-dots {
+    display: flex;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #333; /* Set the color of your dots */
+    border-radius: 50%;
+    animation: dotAnimation 1.5s infinite;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .dot:nth-child(3) {
+    animation-delay: 1s;
+  }
+  
+  .loading-label {
+    margin-top: 8px; /* Adjust the spacing between dots and label */
+    font-size: 14px; /* Set the font size of the label */
+  }
+  
