@@ -69,7 +69,7 @@ app.use("/resetPassword", resetPassword);
 
 
 
-const PORT = process.env.REACT_APP_MODE == 'development' ? 5000 : 3000
+const PORT = process.env?.PORT
 
 app.listen(PORT, () => {
     console.log("server is running on port: " + PORT)
