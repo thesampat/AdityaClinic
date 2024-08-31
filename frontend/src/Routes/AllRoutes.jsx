@@ -51,6 +51,7 @@ import ReviewBid from './AdminRoutes/BIDS/ReviewBid';
 import AlternativeTherapiesList from './AdminRoutes/Alternative_Therapies/AlternativeTherapiesList';
 import UpdateAlternativeTherapy from './AdminRoutes/Alternative_Therapies/UpdateAlternativeTherapy';
 import BidsTable from './AdminRoutes/BIDS/BidsTable';
+import ClinicProfile from './AdminRoutes/ClinicProfile';
 
 export default function AllRoutes() {
   
@@ -352,7 +353,15 @@ export default function AllRoutes() {
                 </PrivateRoute>
               }
             ></Route>
-          </>
+
+  <Route
+              path="clinic-profile"
+              element={
+                <PrivateRoute allowedRoles={['SuperAdmin']}>
+                  <ClinicProfile />{' '}
+                </PrivateRoute>
+              }
+            ></Route>          </>
         )}
 
         {/* External Public Routes */}

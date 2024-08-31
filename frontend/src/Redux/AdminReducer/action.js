@@ -772,12 +772,20 @@ const getAllFilteredAppointments = (data, queryParams) => async (dispatch) => {
     }
 }
 
-
+const setClinicProfile = ()=>  async(dispatch) => {
+    try {
+      const result = await axios.get(`${END_POINT}/clinic-profile`, {
+      });
+      dispatch({ type: types.SET_CLINIC_PROFILE , payload: result?.data });
+    } catch (error) {
+      toast.error(error?.response?.data || "Something went wrong");
+    }
+  };
 
 
 export {
     UploadImages, DeleteImages, updateAppointmentStatus,
     END_POINT, UploadFile, RemoveFile, addNewPrescription, getAllPatientPrescription, addNewDoctor, addNewPatient, getAllDoctor, deleteDoctor, getSingleDoctor, updateDoctor, getAllReceptionist, getSingleReceptionist, deleteReceptionist, getAllPatient, deletePatient, updatePatient, getSinglePatient, addNewConsultant, getAllConsultant, deleteConsultant, getSingleConsultant, updateConsultant,
     addNewAppointment, addNewEnquiry, getAllAppointment, getAllDoctor_External, getAllAppointment_External,
-    getSinglePatientFetch, UploadFiles, getAllFilteredAppointments, getJwtToken
+    getSinglePatientFetch, UploadFiles, getAllFilteredAppointments, getJwtToken, setClinicProfile
 };

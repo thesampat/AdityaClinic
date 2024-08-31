@@ -134,7 +134,8 @@ const initialState = {
     consultantAppointments: null,
 
     patientStatus: null,
-    CaseTypes: null
+    CaseTypes: null,
+    clinicProfile:null,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -848,10 +849,10 @@ export const reducer = (state = initialState, action) => {
                 ...state, consultantAppointments: payload
             }
 
-        // case GET_ONLINE_APPOINTMENTS:
-        //     return {
-        //         ...state, onineAppointments: payload
-        //     }
+        case 'SET_CLINIC_PROFILE':
+            return {
+                ...state, clinicProfile: payload
+            }
 
         // case GET_ONLINE_APPOINTMENTS:
         //     return {

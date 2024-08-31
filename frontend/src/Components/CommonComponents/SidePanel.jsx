@@ -5,7 +5,7 @@ import AdminDashboard from '../../Routes/AdminRoutes/AdminDashboard';
 import { GrContact, GrContactInfo, GrDashboard, GrLogout, GrPowerReset, GrUserWorker } from 'react-icons/gr';
 import { IoLogOut } from 'react-icons/io5';
 import { GiChest, GiDoctorFace, GiHelp, GiLetterBomb, GiMenhir, GiNotebook, GiPerson, GiPersonInBed, GiProgression, GiSergeant } from 'react-icons/gi';
-import { BsPerson, BsPersonCircle, BsPersonDash, BsPersonFill } from 'react-icons/bs';
+import { BsPerson, BsPersonCircle, BsPersonDash, BsPersonFill, BsPersonFillGear } from 'react-icons/bs';
 import { IoMdLogOut } from 'react-icons/io';
 import { useSelector } from 'react-redux';
 import ResetPasswordPopup from '../../Routes/AdminRoutes/ResetPassword';
@@ -24,51 +24,47 @@ const SidePanel = () => {
   };
 
   const links = [
-    { id: 1, text: 'Dashboard', to: '/dashboard', icon: <AiTwotoneDashboard /> },
-    { id: 2, text: 'Appointments', to: '/appointment/list', icon: <GiNotebook /> },
-    { id: 3, text: 'Doctors', to: '/doctors', icon: <BsPersonFill /> },
-    { id: 4, text: 'Assistant Doctor', to: '/assistantDoctor', icon: <BsPersonDash /> },
-    { id: 5, text: 'Patient', to: '/patients', icon: <GiPersonInBed /> },
-    { id: 6, text: 'Receptionist', to: '/receptionist', icon: <BsPerson /> },
-    { id: 7, text: 'Consultant', to: '/consultant', icon: <BsPersonCircle /> },
-    { id: 8, text: 'Enqiury', to: '/enquiry', icon: <GrContact /> },
-    { id: 9, text: 'Income & Expn', to: '/income_expenses', icon: <AiFillAccountBook /> },
-    { id: 10, text: 'Inventory', to: '/main/inventory/inventory/addNew', icon: <GiChest /> },
-    { id: 11, text: 'Alternative Therapies', to: '/AlternativeTherapies', icon: <GiChest /> },
-    { id: 12, text: 'Feedback', to: '/feedback', icon: <FaPaperPlane /> },
-    { id: 13, text: 'Bids', to: '/bids', icon: <FaHammer /> },
+    { id: 1, text: 'Dashboard', to: '/dashboard', icon: <AiTwotoneDashboard className='h-8 w-6 ' /> },
+    { id: 2, text: 'Appointments', to: '/appointment/list', icon: <GiNotebook className='h-6 w-6'/> },
+    { id: 3, text: 'Doctors', to: '/doctors', icon: <BsPersonFill className='h-6 w-6'/> },
+    { id: 4, text: 'Assistant Doctor', to: '/assistantDoctor', icon: <BsPersonDash className='h-6 w-6'/> },
+    { id: 5, text: 'Patient', to: '/patients', icon: <GiPersonInBed className='h-6 w-6'/> },
+    { id: 6, text: 'Receptionist', to: '/receptionist', icon: <BsPerson className='h-6 w-6'/> },
+    { id: 7, text: 'Consultant', to: '/consultant', icon: <BsPersonCircle className='h-6 w-6'/> },
+    { id: 8, text: 'Enqiury', to: '/enquiry', icon: <GrContact  className='h-6 w-6'/> },
+    { id: 9, text: 'Income & Expn', to: '/income_expenses', icon: <AiFillAccountBook className='h-6 w-6'/> },
+    { id: 10, text: 'Inventory', to: '/main/inventory/inventory/addNew', icon: <GiChest className='h-6 w-6'/> },
+    { id: 11, text: 'Alternative Therapies', to: '/AlternativeTherapies', icon: <GiChest className='h-6 w-6'/> },
+    { id: 12, text: 'Feedback', to: '/feedback', icon: <FaPaperPlane className='h-6 w-6'/> },
+    { id: 13, text: 'Bids', to: '/bids', icon: <FaHammer className='h-6 w-6'/> },
+    { id: 13, text: 'Profile', to: '/clinic-profile', icon: <BsPersonFillGear className='h-6 w-6'/> },
   ];
 
   return (
-    <div className={`SidePanel bg-blue-400 ms-3 mt-3 h-[100vh] text-black transition-all duration-300 ${isCollapsed ? 'w-14' : 'w-48'} overflow-hidden flex flex-col items-center shadow-md rounded`}>
+    <div className={`bg-slate-100 SidePanel border border-2 border-slate-300 ms-3 mt-3 h-[100vh] text-black transition-all  ps-1 duration-300 ${isCollapsed ? 'w-14' : 'w-56'} overflow-hidden flex flex-col items-center shadow-md rounded`}>
       <button onClick={toggleCollapse} className="p-2">
         {isCollapsed ? (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         ) : (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
         )}
       </button>
-      <ul className={`${isCollapsed && 'flex flex-col'}`}>
+      <ul className={`${isCollapsed && 'flex flex-col'} flex flex-col gap-3`}>
         {links.map((link) => (
           <li key={link.id} className="flex items-center rounded-md w-100">
-            <NavLink to={link.to} className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-gray-50 rounded-md w-full' : '')}>
-              <div className="flex items-center p-2 rounded-md">
+            <NavLink to={link.to} className={({ isActive, isPending }) => (isPending ? 'pending w-100' : isActive ? 'bg-blue-300 rounded-md w-full' : 'w-full')}>
+              <div className="flex items-center p-2 rounded-md text-gray-800">
                 {link.icon}
                 {!isCollapsed && <span className="ml-3">{link.text}</span>}
               </div>
             </NavLink>
           </li>
         ))}
-        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
-        ShiVen
-        <text x="10" y="50" font-family="Verdana, sans-serif" font-size="30" font-weight="bold" fill="black" className="uppercase">
-          ShiVen
-        </text>
-      </svg> */}
+       
         {!isCollapsed && (
           <li className="flex items-center rounded-md w-100 mt-10 mx-3">
             <div className="ProfileName flex flex-col gap-2">
@@ -84,16 +80,16 @@ const SidePanel = () => {
                   window.sessionStorage.clear();
                   window.location.reload();
                 }}
-                className="p-1 flex items-center px-2 rounded-md text-white bg-red-500 font-bold"
+                className="p-1 flex items-center px-2 rounded-md text-white font-bold bg-orange-400" 
               >
                 <IoMdLogOut />
                 {!isCollapsed && <span className="ml-3">Logout</span>}
               </button>
-              <button onClick={(e) => setResetPasswordOpen(true)} className="p-1 flex items-center px-2 rounded-md text-black bg-blue-500 font-bold">
+              <button onClick={(e) => setResetPasswordOpen(true)} className="p-1 flex items-center px-2 rounded-md text-black bg-blue-300 font-semibold">
                 <GrPowerReset className="text-white" />
                 {!isCollapsed && <span className="ml-3">Reset Password</span>}
               </button>
-              <button onClick={(e) => setPopupContactUs(true)} className="p-1 flex items-center px-2 rounded-md text-black bg-yellow-500 font-bold">
+              <button onClick={(e) => setPopupContactUs(true)} className="p-1 flex items-center px-2 rounded-md text-black bg-yellow-300 font-bold">
                 <GrContactInfo className="text-white" />
                 {!isCollapsed && <span className="ml-3">Contact Us</span>}
               </button>

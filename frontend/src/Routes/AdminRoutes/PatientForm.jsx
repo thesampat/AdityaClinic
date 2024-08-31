@@ -226,7 +226,7 @@ export default function CustomerForm() {
       let i = await dispatch(UploadImages([file], formData?._id, 'profile_image', 'customer'));
       if (i == true) {
         set_profile_image_res('Uploaded!!');
-      }
+      } 
     }
   };
 

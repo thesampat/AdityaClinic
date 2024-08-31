@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import NavigationButtons from '../../Components/adminDashboard/NavigationButtons';
-import { getAllFilteredAppointments } from '../../Redux/AdminReducer/action';
+import { getAllFilteredAppointments, setClinicProfile } from '../../Redux/AdminReducer/action';
 import { useDispatch, useSelector } from 'react-redux';
 import CustomSpinner from '../../Components/CommonComponents/CustomSpinner';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import { ToastContainer } from 'react-toastify';
 
@@ -12,6 +12,7 @@ export default function AdminDashboard() {
   let [offlineAp, setOffline] = useState(null);
   let [consultantAp, setConsultantAp] = useState(null);
   const dispatch = useDispatch();
+  const clinicProfile = useSelector(state=>state?.AdminReducer.clinicProfile)
 
   const { getAllAppointmentData, onineAppointments, offlineAppointments, consultantAppointments } = useSelector((state) => state.AdminReducer);
   const table1Headers = ['Time', 'Name', 'Date'];
@@ -22,6 +23,7 @@ export default function AdminDashboard() {
   };
 
   useEffect(() => {
+    dispatch(setClinicProfile())
     dispatch(getAllFilteredAppointments({ IsOnline: true }, { pageSize: 30 }));
   }, []);
 
@@ -51,6 +53,9 @@ export default function AdminDashboard() {
 
   return (
     <div className="m-3 rounded-md bg-slate-100 px-8 min-h-[100vh] h-fit py-8 w-full">
+      <div className='flex gap-2'>
+      <img className='w-10 h-10' src={`data:image/jpeg;base64,${clinicProfile?.imageData}`} alt="" srcset="" />
+
       <div className="font-bold text-2xl text-black">
         {' '}
         {(() => {
@@ -58,10 +63,11 @@ export default function AdminDashboard() {
           if (window.location.hostname === 'shivenclinic.com') {
             name = 'Shiven Clinic Management';
           } else {
-            name = 'Aditya Homoeopathic Clinic';
+            name = clinicProfile?.data?.ClinicName;
           }
           return name;
         })()}
+      </div>
       </div>
       <div className="flex flex-wrap justify-between items-baseline mb-4 mt-1">
         <div></div>

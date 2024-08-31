@@ -20,6 +20,7 @@ const feedbackRoutes = require("./Routes/feedbackRoutes");
 const resetPassword = require("./Controllers/ResetPasswords")
 const alternativeTherapiesRouter = require('./Routes/AlternativeTherapiesRoutes')
 const bidRouter = require('./Routes/bidRoutes')
+const clinicProfileRoutes = require('./Routes/ClinicProfileController.js')
 
 // Direct Routers
 const IncomeAndExpensesRouter = require('./Controllers/IncomeAndExpensesController')
@@ -64,6 +65,7 @@ app.use("/admin", adminRouter)
 app.use("/feedback", feedbackRoutes);
 app.use("/bid", bidRouter);
 app.use("/resetPassword", resetPassword);
+app.use('/clinic-profile', clinicProfileRoutes)
 
 
 const PORT = process.env?.PORT

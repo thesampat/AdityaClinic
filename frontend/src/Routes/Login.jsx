@@ -9,7 +9,8 @@ import CustomButton from '../Components/CommonComponents/CustomButton';
 import { checkLoggedIn, consultantLogin, doctorLogin, mainDoctorLogin, receptionistLogin, assistantDoctorLogin } from '../Redux/AuthReducer/action';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import axios from 'axios';
-import { END_POINT, getJwtToken } from '../Redux/AdminReducer/action';
+import { END_POINT, getJwtToken, setClinicProfile } from '../Redux/AdminReducer/action';
+import ClinicProfile from './AdminRoutes/ClinicProfile';
 
 const fetchItemSingle = async (path) => {
   try {
@@ -35,6 +36,12 @@ export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+  const clinicProfile = useSelector(state=>state?.AdminReducer.clinicProfile)
+
+
+  useEffect(()=>{
+    dispatch(setClinicProfile())
+  }, [0])
 
   const handlePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -89,20 +96,21 @@ export default function Login() {
       window.location.pathname == '/login' && navigate('/dashboard');
     }
   }, [userLoginProcess, userLoginSuccess, userLoginFail]);
-
+  
   return (
     <div className="bg-blue-200 ">
       <div className="w-full">
         <img src="https://www.shiveninfotech.com/wp-content/uploads/2023/08/logo-t.png" alt="" height={200} width={200} />
       </div>
-      <div className="flex justify-center">
-        <h1 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl bg-black p-4 rounded-lg">
+      <div className="flex flex-col items-center gap-3">
+      <img className='h-20 w-20' src={`data:image/jpeg;base64,${clinicProfile?.imageData}`} alt="" srcset="" />
+        <h1 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-2xl bg-black py-2 px-4 rounded-lg">
           {(() => {
             let name = 'LocalClinic';
             if (window.location.hostname === 'shivenclinic.com') {
               name = 'Shiven Clinic Management';
             } else {
-              name = 'Aditya Homoeopathic Clinic';
+              name = clinicProfile?.data?.ClinicName;
             }
             return name;
           })()}

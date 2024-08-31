@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import CustomSpinner from '../../Components/CommonComponents/CustomSpinner';
 import CustomBreadcrumbs from '../../Components/CommonComponents/CustomBreadcrumbs';
 import CustomInput from '../../Components/CommonComponents/CustomInput';
+import RightWrapper from '../../Components/CommonComponents/ComponentWrapper';
 
 export default function AppointmentList() {
   // Redux selectors to access state
@@ -29,7 +30,8 @@ export default function AppointmentList() {
   }, [query]);
 
   return (
-    <div className="mt-4 px-8 w-full ">
+    <RightWrapper>
+      <div className="mt-4 px-8 w-full ">
       <div className="flex justify-between flex-wrap items-center ">
         {/* Breadcrumbs */}
         <CustomBreadcrumbs data={[{ title: 'Dashboard', url: '/dashboard' }, { title: 'appointments' }]} />
@@ -152,5 +154,6 @@ export default function AppointmentList() {
 
       <ToastContainer />
     </div>
+    </RightWrapper>
   );
 }
