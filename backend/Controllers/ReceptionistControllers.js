@@ -63,8 +63,8 @@ const receptionistRegisterBySuperAdmin = async (req, res) => {
                     experience_details,
                     location,
                 })
-                await setPermissionRoles(name, Role, email, newReceptionist?._id)
                 await newReceptionist.save()
+                await setPermissionRoles(name, Role, email, newReceptionist?._id)
                 return res.status(201).send({ msg: 'Receptionist registered successfully.', data: newReceptionist?._id });
             } catch (error) {
 

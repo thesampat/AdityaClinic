@@ -69,8 +69,9 @@ const consultantRegisterBySuperAdmin = async (req, res) => {
                     availability
                 })
 
-                await setPermissionRoles(name, Role, email, newConsultant?._id)
                 await newConsultant.save()
+                await setPermissionRoles(name, Role, email, newConsultant?._id)
+
                 return res.status(201).send({ msg: 'Consultant registered successfully.', data: newConsultant?._id });
             } catch (error) {
 

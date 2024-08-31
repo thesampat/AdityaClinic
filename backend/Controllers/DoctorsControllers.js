@@ -52,8 +52,9 @@ const doctorRegisterBySuperAdmin = async (req, res) => {
                     availability
                 })
 
-                await setPermissionRoles(name, Role, email, newDoctor?._id)
                 let newDoctorRes = await newDoctor.save()
+                await setPermissionRoles(name, Role, email, newDoctor?._id)
+
 
                 return res.status(201).send({ msg: 'Doctor registered successfully.', data: newDoctorRes?._id });
             } catch (error) {
