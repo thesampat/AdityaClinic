@@ -10,8 +10,8 @@ router.post('/', multer.any({ dest: './Storage/clinic_profiles' }), (req, res)=>
     const jsonData = JSON.stringify(data);
     const imageName = 'logo.jpg';
 
+    fs.writeFileSync('./Storage/clinic_profiles/data.json', jsonData);
     if(file){
-        fs.writeFileSync('./Storage/clinic_profiles/data.json', jsonData);
     fs.writeFileSync(`./Storage/clinic_profiles/images/${imageName}`, file.buffer);
     }
     
